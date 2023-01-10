@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIMZAC ADMIN</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="/index.html">SIMZAC</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                    <a class="nav-link" href="/personal.html">Personal</a>
+                    <a class="nav-link" href="/inventario.html">Inventario</a>
+                    <a class="nav-link" href="/seguridadSocial.html">Seguridad Social</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#finanzas" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Finanzas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/sat.html">SAT</a></li>
+                            <li><a class="dropdown-item" href="#gastos.html">Gastos</a></li>
+                            <li><a class="dropdown-item" href="#facturas.html">Facturas</a></li>
+                            <li><a class="dropdown-item" href="#ordenes">Órdenes</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid bg-black">
+
+    </div>
+
+    <!--BUSCAR ORDENES-->
+    <div class="container  rounded-pill" style="padding-top: 1rem;">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn bi-search" type="submit"></button>
+        </form>
+    </div>
+    <!--FIN BUSCAR ORDENES-->
+
+
+    <!--CONTAINER -->
+    <div class="container text-center" style="padding-top: 1rem;" id="ordenes">
+        <!--TABLA ORDENES ACTIVAS-->
+        <table class="table align-items-baseline ">
+            <thead class="table-dark ">
+                <tr>
+                    <th scope="col ">No.Orden</th>
+                    <th scope="col">Compañía</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Monto</th>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>124</td>
+                    <td>Cervecera de Zacatecas</td>
+                    <td>Programación</td>
+                    <td>$25,000</td>
+                    <td> <button type="button" class="btn"><i class="bi bi-filetype-pdf"  style="font-size: 1.5rem; " ></i></button></i>
+                    </td>
+                    <td>
+                        <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Editar"><i class="bi bi-pencil-square"  style="font-size: 1.5rem; " ></i></button>
+                        <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Eliminar"><i class="bi bi-trash-fill"  style="font-size: 1.5rem; " ></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!--FIN TABLA ORDENES ACTIVAS-->
+
+        <!--BOTON AGREGAR ORDEN-->
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end  ">
+            <button class="btn btn-dark" type="button" style="border-radius: 4rem;" data-bs-toggle="modal" data-bs-placement="bottom" data-bs-title="Añadir orden" data-bs-target="#myModal"><i class="bi bi-plus-circle"></i></button>
+        </div>
+        <!--FIN BOTON AGREGAR ORDEN-->
+    </div>
+    <!-- FIN CONTAINER -->
+
+
+    <!--MODAL AGREGAR ORDEN-->
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Orden</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Compañía">
+                        <label for="floatingInput">Compañía</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Descripción">
+                        <label for="floatingInput">Descripción</label>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">$</span>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    </div>
+
+                    <div class="input-group">
+                        <input id="" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN MODAL AGREGAR ORDEN-->
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--CDN BOOTSTRAP-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- POOPER JS -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <!--LOCAL JS-->
+    <script defer src="functions.js"></script>
+
+</body>
+
+</html>
